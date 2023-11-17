@@ -1,0 +1,146 @@
+﻿@page
+@model Flight_Landing.Pages.landingModel
+@{
+}
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Airplane Landing Simulation</title>
+	<style>
+		body {
+			background-color: #f1f1f1;
+			font-family: Arial, sans-serif;
+			text-align: center;
+			margin: 0;
+		}
+
+		.center-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 80vh;
+		}
+
+		/* Define CSS styles for the vertical runways and airplanes */
+		.runway {
+			width: 40px;
+			height: 500px;
+			background-color: #44a8f0; /* Blue */
+			position: relative;
+			margin: 20px;
+			float: left;
+		}
+
+		.airplane {
+			width: 40px;
+			height: 40px;
+			background-color: #f6c51e; /* Yellow */
+			position: relative;
+			border-radius: 50%;
+		}
+
+		.plane-label {
+			font-size: 12px;
+			margin-top: 5px;
+		}
+
+		/* Style for the buttons */
+		.button-container {
+			position: absolute;
+			bottom: 20px;
+			right: 20px;
+		}
+
+		button {
+			padding: 14px 28px;
+			background-color: #35bc59; /* Green */
+			border: none;
+			color: white;
+			font-size: 18px;
+			border-radius: 5px;
+			cursor: pointer;
+			margin: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="center-container">
+		<div class="runway">
+			<div class="airplane">
+				<div class="plane-label">Plane 1</div>
+			</div>
+		</div>
+		<div class="runway">
+			<div class="airplane">
+				<div class="plane-label">Plane 2</div>
+			</div>
+		</div>
+		<div class="runway">
+			<div class="airplane">
+				<div class="plane-label">Plane 3</div>
+			</div>
+		</div>
+	</div>
+	<div class="button-container">
+		<button onclick="startSimulation()">Start</button>
+		<button onclick="pauseSimulation()">Pause</button>
+		<button onclick="resetSimulation()">Reset</button>
+	</div>
+	<script>
+		var airplanes = document.querySelectorAll(".airplane");
+		var runways = document.querySelectorAll(".runway");
+		var isLanding = false;
+		var animationIntervals = [];
+		var isAlertDisplayed = false;
+
+		function startSimulation() {
+			isLanding = true;
+			isAlertDisplayed = false;
+			airplanes.forEach(function (airplane, index) {
+				animateAirplane(airplane, runways[index]);
+			});
+		}
+
+		function pauseSimulation() {
+			isLanding = false;
+			animationIntervals.forEach(clearInterval);
+		}
+
+		function resetSimulation() {
+			isLanding = false;
+			animationIntervals.forEach(clearInterval);
+			airplanes.forEach(function (airplane) {
+				airplane.style.top = "0px";
+			});
+			isAlertDisplayed = false;
+		}
+
+		function animateAirplane(airplane, runway) {
+			var position = 0;
+			var speed = 2;
+
+			var animationInterval = setInterval(function () {
+				if (isLanding) {
+					position += speed;
+					airplane.style.top = position + "px";
+					if (position >= (runway.offsetHeight - airplane.offsetHeight) && !isAlertDisplayed) {
+						clearInterval(animationInterval);
+						var planeName = airplane.querySelector(".plane-label").textContent;
+						alert(planeName + " has landed on a runway!");
+						isAlertDisplayed = true;
+					}
+				}
+			}, 10);
+
+			animationIntervals.push(animationInterval);
+		}
+	</script>
+</body>
+
+</html>

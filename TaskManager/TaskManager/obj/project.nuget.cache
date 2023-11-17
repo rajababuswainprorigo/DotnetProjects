@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "lBeJTf3bJPnv+Ve3zIFSkzlzodTjelXwbEd9jKvxGHx53a6VFubnrHljqngjNahryIVjPCDxGJE+UyWBRX1z4g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\rajababus\\source\\repos\\TaskManager\\TaskManager\\TaskManager.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rajababus\\.nuget\\packages\\mstest.testadapter\\3.1.1\\mstest.testadapter.3.1.1.nupkg.sha512",
+    "C:\\Users\\rajababus\\.nuget\\packages\\mstest.testframework\\3.1.1\\mstest.testframework.3.1.1.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "SYbrI8jBe6pyVN3mnpiMlTh+BjnTSukiyMyXciGfpuA=",
+  "Source": "FlightSimulator",
+  "BasePath": "_content/FlightSimulator",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

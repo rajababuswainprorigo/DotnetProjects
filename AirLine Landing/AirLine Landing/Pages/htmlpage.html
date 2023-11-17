@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Airplane Landing Simulation</title>
+    <style>
+        /* Define CSS styles for runways and airplanes */
+        .runway {
+            width: 600px;
+            height: 20px;
+            background-color: #009900;
+            position: relative;
+        }
+        .airplane {
+            width: 40px;
+            height: 20px;
+            background-color: #0000FF;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="runway" class="runway">
+        <div id="airplane" class="airplane"></div>
+    </div>
+    <button onclick="startSimulation()">Start</button>
+    <button onclick="pauseSimulation()">Pause</button>
+    <button onclick="resetSimulation()">Reset</button>
+
+    <script>
+        var airplane = document.getElementById("airplane");
+        var runway = document.getElementById("runway");
+        var isLanding = false;
+        var animationInterval;
+
+        function startSimulation() {
+            isLanding = true;
+            animateAirplane();
+        }
+
+        function pauseSimulation() {
+            isLanding = false;
+            clearInterval(animationInterval);
+        }
+
+        function resetSimulation() {
+            isLanding = false;
+            clearInterval(animationInterval);
+            airplane.style.left = "0px";
+        }
+
+        function animateAirplane() {
+            var position = 0;
+            var speed = 2;
+
+            animationInterval = setInterval(function () {
+                if (isLanding) {
+                    position += speed;
+                    airplane.style.left = position + "px";
+
+                    if (position >= (runway.offsetWidth - airplane.offsetWidth)) {
+                        // Landing completed
+                        clearInterval(animationInterval);
+                        alert("Airplane has landed!");
+                        resetSimulation();
+                    }
+                }
+            }, 10);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "gdG6SNRGgr4uKXRG2sQLrTUjmaQSIdeQ5UL2/5roqhi4ZQ6A3SDHDw1wO1rlmYOOZLtjpZjgwRiH3cHry9P5Xg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\rajababus\\source\\repos\\BankingSystemCon\\BankTestCases\\BankTestCases.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rajababus\\.nuget\\packages\\mstest.testframework\\3.1.1\\mstest.testframework.3.1.1.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,5 @@
+C:\Users\rajababus\source\repos\BankingSystemCon\BankTestCases\obj\Debug\net6.0\BankTestCases.csproj.AssemblyReference.cache
+C:\Users\rajababus\source\repos\BankingSystemCon\BankTestCases\obj\Debug\net6.0\BankTestCases.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rajababus\source\repos\BankingSystemCon\BankTestCases\obj\Debug\net6.0\BankTestCases.AssemblyInfoInputs.cache
+C:\Users\rajababus\source\repos\BankingSystemCon\BankTestCases\obj\Debug\net6.0\BankTestCases.AssemblyInfo.cs
+C:\Users\rajababus\source\repos\BankingSystemCon\BankTestCases\obj\Debug\net6.0\BankTestCases.csproj.CoreCompileInputs.cache

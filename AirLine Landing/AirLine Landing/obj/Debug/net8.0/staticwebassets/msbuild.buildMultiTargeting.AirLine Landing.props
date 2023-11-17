@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\AirLine Landing.props" />
+</Project>
