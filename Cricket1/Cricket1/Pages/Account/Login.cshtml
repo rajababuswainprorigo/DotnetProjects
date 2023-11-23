@@ -1,0 +1,23 @@
+﻿@page
+@model Cricket1.Pages.Account.LoginModel
+@{
+	ViewData["Title"] = "Cricket Login";
+}
+<h2>Cricket Login</h2>
+
+@if (!string.IsNullOrEmpty(ViewData["ErrorMessage"] as string))
+{
+    <div class="alert alert-danger">
+        @ViewData["ErrorMessage"]
+    </div>
+}
+
+<form method="post">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="Username" asp-for="Username" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="Password" asp-for="Password" required>
+
+    <button type="submit">Login</button>
+</form>

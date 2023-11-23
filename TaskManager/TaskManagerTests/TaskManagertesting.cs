@@ -95,7 +95,7 @@ namespace TaskManagerApp.Tests
 		}
 
 		[TestMethod]
-		public void MarkTaskAsComplete_ValidInput_TaskMarkedAsComplete()
+		public void ValidateValidInput()
 		{
 			// Arrange
 			TaskManager taskManager = new TaskManager();
@@ -111,7 +111,7 @@ namespace TaskManagerApp.Tests
 		}
 
 		[TestMethod]
-		public void ViewTasks_EmptyTaskList_DisplayNoTasksMessage()
+		public void ValidateEmptyTaskListDisplayNoTasksMessage()
 		{
 			// Arrange
 			TaskManager taskManager = new TaskManager();
