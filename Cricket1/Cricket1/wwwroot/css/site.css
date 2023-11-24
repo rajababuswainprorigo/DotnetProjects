@@ -1,5 +1,3 @@
-/* wwwroot/css/site.css */
-
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f8f9fa;
@@ -21,7 +19,7 @@ body {
 }
 
 h2 {
-    color: #007bff; /* Change header color to blue */
+    color: #007bff;
     margin-bottom: 20px;
 }
 
@@ -40,7 +38,7 @@ input {
 }
 
 button {
-    background-color: #28a745; /* Change button color to green */
+    background-color: #218838; /* Darker green */
     color: #ffffff;
     padding: 12px;
     border: none;
@@ -49,11 +47,11 @@ button {
     width: 100%;
     font-size: 16px;
     font-weight: bold;
-    transition: background-color 0.3s ease-in-out; /* Smooth transition */
+    transition: background-color 0.3s ease-in-out;
 }
 
     button:hover {
-        background-color: #218838; /* Darker green on hover */
+        background-color: #1e7e34; /* Darker green on hover */
     }
 
 .checkbox-container {
@@ -71,7 +69,7 @@ button {
     color: #007bff;
     text-decoration: none;
     display: inline-block;
-    transition: text-decoration 0.3s ease-in-out; /* Smooth transition */
+    transition: text-decoration 0.3s ease-in-out;
 }
 
     .link:hover {
@@ -91,7 +89,7 @@ button {
     border-radius: 4px;
     margin-right: 10px;
     text-decoration: none;
-    transition: background-color 0.3s ease-in-out; /* Smooth transition */
+    transition: background-color 0.3s ease-in-out;
 }
 
     .social-button:hover {
@@ -104,6 +102,8 @@ button {
 
 .animate-error {
     animation: shake 0.5s ease-in-out;
+    color: #dc3545; /* Set error message color to red */
+    background-color: #f8d7da; /* Set error message background color */
 }
 
 @keyframes fadeInAndOut {

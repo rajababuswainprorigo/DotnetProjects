@@ -1,31 +1,25 @@
-﻿function validateLogin() {
+﻿// wwwroot/js/site.js
+
+function toggleAnimation(element, className) {
+    element.classList.add(className);
+    setTimeout(() => {
+        element.classList.remove(className);
+    }, 1000);
+}
+
+function validateLogin() {
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
     var loginMessage = document.getElementById("loginMessage");
 
-    // Check for empty email or password
-    if (!email || !password) {
-        loginMessage.innerText = "Email and password are required.";
-        setDynamicColor(loginMessage, "#dc3545"); // Red color
-        toggleAnimation(loginMessage, "animate-error");
-        return;
-    }
+    // ... rest of the code
 
-    // More robust email validation
-    if (!isValidEmail(email)) {
-        loginMessage.innerText = "Invalid email format.";
-        setDynamicColor(loginMessage, "#dc3545"); // Red color
-        toggleAnimation(loginMessage, "animate-error");
-        return;
-    }
-
-    // Send credentials to the server
     fetch('/Login', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json', // Update content type to 'application/json'
+            'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email: email, password: password }), // Send data as JSON
+        body: JSON.stringify({ email: email, password: password }),
     })
         .then(response => {
             if (!response.ok) {
@@ -37,25 +31,28 @@
             if (data.success) {
                 // User authentication successful
                 loginMessage.innerText = "Login successful!";
-                setDynamicColor(loginMessage, "#007bff"); // Blue color
+                setDynamicColor(loginMessage, "#007bff");
                 toggleAnimation(loginMessage, "animate-success");
             } else {
                 // Invalid credentials or other errors
                 loginMessage.innerText = data.errorMessage || "Invalid credentials. Please try again.";
-                setDynamicColor(loginMessage, "#dc3545"); // Red color
+                setDynamicColor(loginMessage, "#dc3545");
                 toggleAnimation(loginMessage, "animate-error");
             }
         })
         .catch(error => {
             console.error('Error:', error);
             loginMessage.innerText = "An error occurred. Please try again.";
-            setDynamicColor(loginMessage, "#dc3545"); // Red color
+            setDynamicColor(loginMessage, "#dc3545");
             toggleAnimation(loginMessage, "animate-error");
         });
 }
 
+function setDynamicColor(element, color) {
+    element.style.color = color;
+}
+
 function isValidEmail(email) {
-    // Basic email validation (you might want to use a more comprehensive approach)
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+    // Implement more robust email validation if needed
+    return email.checkValidity();
 }
