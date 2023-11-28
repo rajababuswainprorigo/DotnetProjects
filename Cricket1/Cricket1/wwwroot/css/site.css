@@ -38,7 +38,7 @@ input {
 }
 
 button {
-    background-color: #218838; /* Darker green */
+    background-color: #218838;
     color: #ffffff;
     padding: 12px;
     border: none;
@@ -51,7 +51,7 @@ button {
 }
 
     button:hover {
-        background-color: #1e7e34; /* Darker green on hover */
+        background-color: #1e7e34;
     }
 
 .checkbox-container {
@@ -96,14 +96,19 @@ button {
         background-color: #f1f8ff;
     }
 
+.error-message {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
 .animate-success {
     animation: fadeInAndOut 1s ease-in-out;
 }
 
 .animate-error {
     animation: shake 0.5s ease-in-out;
-    color: #dc3545; /* Set error message color to red */
-    background-color: #f8d7da; /* Set error message background color */
+    color: #dc3545;
+    background-color: #f8d7da;
 }
 
 @keyframes fadeInAndOut {

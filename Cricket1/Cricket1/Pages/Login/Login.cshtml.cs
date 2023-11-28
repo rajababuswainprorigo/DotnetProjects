@@ -25,7 +25,7 @@ public class LoginModel : PageModel
         else
         {
             // Display an error message or handle authentication failure
-            ViewData["ErrorMessage"] = "Invalid username or passworddddd.";
+            ViewData["ErrorMessage"] = "Invalid username or passworddddd.";//you can start with those invalid 
             return Page();
         }
     }
