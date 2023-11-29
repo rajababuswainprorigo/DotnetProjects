@@ -1,0 +1,32 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Cricket Home Page";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/styles.css" />
+
+    <style>
+        body {
+            background-image: url('/Images/Cricket2.jpg'); /* Replace with the actual image path */
+            background-size: cover; /* Adjust as needed */
+            background-position: center;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+   
+    <p>Create a new account? <a asp-page="/RegisterationFolder/Registeration">Register here!</a></p>
+    <p>Already have an account? <a asp-page="/LoginFolder/Login">Login</a></p>
+    <p>Don't remember the password? <a asp-page="/ForgotPassword/ForgotPassword">Click here!</a></p>
+</div>

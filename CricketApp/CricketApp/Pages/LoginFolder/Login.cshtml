@@ -1,0 +1,48 @@
+﻿@page
+@model LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+ 
+<link rel="stylesheet" href="~/css/site.css" />
+ 
+<div class="login-container">
+<h2>Login</h2>
+ 
+    <form id="loginForm" method="post">
+<label for="username">Username:</label>
+<input type="text" id="username" name="username" required>
+ 
+        <label for="password">Password:</label>
+<input type="password" id="password" name="password" required>
+ 
+        <div>
+<input type="checkbox" id="rememberMe" name="rememberMe">
+<label for="rememberMe">Remember Me</label>
+</div>
+ 
+        <button type="submit" onclick="validateLogin()">Login</button>
+</form>
+ 
+    <div class="error-message" id="loginMessage"></div>
+ 
+    <div class="forgot-password-link">
+<a href="/ForgotPassword">Forgot Password?</a>
+</div>
+ 
+    <div class="register-link">
+
+        <p>Create a new account? <a asp-page="/RegisterationFolder/Registeration">Register here!</a></p>
+</div>
+ 
+    <div class="social-login">
+<p>Or login with:</p>
+<div class="g-signin2" data-onsuccess="onGoogleSignIn"></div>
+</div>
+ 
+    <div class="terms-link">
+<a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a>
+</div>
+</div>
+ 
+<script src="~/js/site.js"></script>
